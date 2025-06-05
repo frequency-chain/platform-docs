@@ -1,17 +1,77 @@
-# android sdk
+# Android SIWF SDK
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+## Quick Reference
 
-## Overview
+- [SIWF Android SDK Source Code + Demo App](https://github.com/ProjectLibertyLabs/siwf-sdk-android)
+- [Maven Central Package `io.projectliberty:siwf`](https://central.sonatype.com/artifact/io.projectliberty/siwf)
 
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+## 1. Installation
 
-## Key Points
+### Requirements
 
-- Point 1: Lorem ipsum dolor sit amet
-- Point 2: Consectetur adipiscing elit
-- Point 3: Sed do eiusmod tempor incididunt
+- Android API level **24** or later
+- Java **11+**
 
-## Next Steps
+### Installing the SIWF SDK
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+To install the SIWF SDK via **Gradle**, add the following to your `build.gradle` file:
+
+```gradle
+dependencies {
+    implementation 'io.projectliberty:siwf:1.0.0'
+}
+```
+
+[Maven Central Package Page](https://central.sonatype.com/artifact/io.projectliberty/siwf)
+
+## 2. Displaying the SIWF Button
+
+To create a SIWF Button in your Android app, use:
+
+```kotlin
+import io.projectliberty.siwf.Siwf
+import io.projectliberty.models.SiwfButtonMode
+
+Siwf.CreateSignInButton(
+    mode = SiwfButtonMode.PRIMARY,
+    authRequest = authRequest
+)
+```
+
+`authRequest` requires the [Signed Request Payload]() in either `base64url` encoded or structured form.
+
+## 3. Handling Authorization Callbacks
+
+Update your `AndroidManifest.xml` with your own intent filters for authentication callbacks.
+Then, use a `BroadcastReceiver()` to receive the authorization code with `AuthConstants.AUTH_INTENT_KEY`.
+Example:
+
+```xml
+<activity
+    android:name="io.projectliberty.helpers.AuthCallbackActivity"
+    ...
+    <intent-filter android:autoVerify="true">
+        ...
+        <data
+                android:scheme="http"
+                android:host="localhost"
+                android:port="3000"
+                android:path="/login/callback" />
+    </intent-filter>
+    <intent-filter android:autoVerify="true">
+        ... or ...
+        <data
+                android:scheme="siwfdemoapp"
+                android:host="login" />
+    </intent-filter>
+</activity>
+```
+
+## 4. Process Authorization Code
+
+On your backend service, process the authorization code and start your session.
+
+Resources:
+
+- [Documentation on Processing a Result]()
+- [Frequency Gateway SSO Tutorial](https://)
