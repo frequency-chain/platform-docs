@@ -1,17 +1,51 @@
-# ios sdk
+# iOS SIWF SDK
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+## Quick Reference
 
-## Overview
+- [SIWF iOS SDK Source Code + Demo App](https://github.com/ProjectLibertyLabs/siwf-sdk-ios)
+- [Swift Package: `https://github.com/ProjectLibertyLabs/siwf-sdk-ios.git`](https://swiftpackageindex.com/ProjectLibertyLabs/siwf-sdk-ios)
 
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+## 1. Installation
 
-## Key Points
+### Requirements
 
-- Point 1: Lorem ipsum dolor sit amet
-- Point 2: Consectetur adipiscing elit
-- Point 3: Sed do eiusmod tempor incididunt
+- iOS 15.0 or later
+- Swift Package Manager
 
-## Next Steps
+### Installing the SIWF SDK
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+You can install the SIWF SDK via **Swift Package Manager (SPM)**:
+
+1. Open Xcode and navigate to **File → Add Packages**.
+2. Enter the repository URL:
+   ```
+   https://github.com/ProjectLibertyLabs/siwf-sdk-ios.git
+   ```
+3. Select the latest stable version and add it to your project.
+
+[Xcode Documentation Reference](https://developer.apple.com/documentation/xcode/adding-package-dependencies-to-your-app)
+
+## 2. Displaying the SIWF Button
+
+To create a SIWF Button, use the `Siwf.createSignInButton` method:
+
+```swift
+import Siwf
+
+Siwf.createSignInButton(mode: .primary, authRequest: authRequest)
+```
+
+`authRequest` requires the [Signed Request Payload]() in either `base64url` encoded or structured form.
+
+## 3. Handling Authorization Callbacks
+
+Use `onOpenURL` and `Siwf.handleRedirectUrl` to handle deep links and retrieve the authentication code.
+
+## 4. Process Authorization Code
+
+On your backend service, process the authorization code and start your session.
+
+Resources:
+
+- [Documentation on Processing a Result]()
+- [Frequency Gateway SSO Tutorial](https://)
