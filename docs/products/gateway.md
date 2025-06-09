@@ -1,17 +1,80 @@
-# gateway
+# Making Decentralized Social Easy
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Getting started building on Decentralized Social is as easy as deploying a Web2 API.
 
-## Overview
+## Build What You Want
 
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Frequency Developer Gateway offers a suite of tools you can pick and choose from to build the best applications for your users.
 
-## Key Points
+<!-- Add more visual elements to the services -->
 
-- Point 1: Lorem ipsum dolor sit amet
-- Point 2: Consectetur adipiscing elit
-- Point 3: Sed do eiusmod tempor incididunt
+- Add decentralized authentication and onboarding workflows
+- Connect your users with their universal social graph
+- Read, write, and interact with social media content
+- More coming...
 
-## Next Steps
+## Web2 API Simplicity with Decentralized Power
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+- Build your applications faster
+- Own your infrastructure
+- OpenAPI/Swagger out of the box
+- Optimized Docker images
+
+## Basic Architecture
+
+Frequency Developer Gateway provides a simple API to interact with the Frequency social layers of identity, graph, content, and more.
+
+![Gateway Application Layer Diagram](./assets/GatewayLayers.svg)
+
+These microservices are completely independent of one another, so you can use only those pieces you want or need.
+
+![Gateway Application Layer Diagram](./assets/TopLevel.svg)
+
+{{#svg-embed ./src/TopLevel.svg Gateway Application Microservice Diagram}}
+
+## Key Microservices
+
+### Account Service
+
+The Account Service enables easy interaction with accounts on Frequency.
+Accounts are defined as an `msaId` (64-bit identifier) and can contain additional information such as a handle, keys, and more.
+
+- Account authentication and creation using [SIWF](https://github.com/ProjectLibertyLabs/siwf)
+- Delegation management
+- User Handle creation and retrieval
+- User key retrieval and management
+
+### Graph Service
+
+The Graph Service enables easy interaction with social graphs on Frequency.
+Each Graph connection on Frequency can be private or public and can be unidirectional (a follow) or bidirectional (double opt-in friend connection).
+
+- Fetch user graph
+- Update delegated user graphs
+- Watch graphs for external updates
+
+### Content Publishing Service
+
+The Content Publishing Service enables the creation of new content-related activity on Frequency.
+
+- Create posts to publicly broadcast
+- Create replies to posts
+- Create reactions to posts
+- Create updates to existing content
+- Request deletion of content
+- Store and attach media with [IPFS](https://ipfs.tech)
+
+### Content Watcher Service
+
+The Content Watcher Service enables client applications to process content found on Frequency by registering for webhook notifications, triggered when relevant content is found, eliminating the need to interact with the chain for new content.
+
+- Parses and validates Frequency content
+- Filterable webhooks
+- Scanning control
+
+## Get Started
+
+<div class="button-links">
+  <a href="./">Fundamentals</a>
+ 
+</div>
