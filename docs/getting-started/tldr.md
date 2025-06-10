@@ -1,4 +1,4 @@
-```
+
 # tl;dr with Frequency: Web3 Developer Portal
 
 Welcome to the Frequency Developer Portal! This guide will help you quickly get up and running building decentralized applications on the Frequency blockchain. Whether you're a seasoned developer or new to decentralized technologies, Frequency's tools and APIs make it easy to create, interact with, and manage data in a decentralized way.
