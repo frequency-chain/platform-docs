@@ -134,11 +134,6 @@ Next Steps
 
 Happy Building on Frequency! 🚀
 
-```
 
-**References:**
-- : Overview - Frequency Documentation (https://docs.frequency.xyz/)
-- : Introduction - Frequency Developer Gateway (https://projectlibertylabs.github.io/gateway/index.html)
-- [[4]](https://poe.com/citation?message_id=401364267257&citation=4): Security Policy (Frequency GitHub)
 
-```
+
