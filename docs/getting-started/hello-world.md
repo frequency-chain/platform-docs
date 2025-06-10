@@ -1,4 +1,4 @@
-```
+
 # HelloWorld 
 
 This guide will show you how to publish your first piece of content to the Frequency decentralized social blockchain using the Frequency Developer Gateway.
@@ -69,8 +69,3 @@ For more in-depth tutorials and API details, check out:
 
 Happy building on Frequency! 🚀
 
-```
-: Introduction - Frequency Developer Gateway
-: Overview - Frequency Documentation
-
-```
